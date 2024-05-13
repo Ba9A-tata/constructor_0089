@@ -1,54 +1,25 @@
 #include <iostream>
-#include <string>
 using namespace std;
-
-class Mahasiswa
+class buku
 {
+    string judul;
+
 public:
-    int nim;
-    string nama;
-
-    Mahasiswa()
+    buku setJudul(string judul)
     {
-        nim = 0;
-        nama = "";
-    };
-    Mahasiswa(int iNim)
-    {
-        nim = iNim;
-    };
-    Mahasiswa(string);
-    Mahasiswa(int iNim, string iNama);
-    void cetak();
-};
-
-Mahasiswa::Mahasiswa(string iNama){
-    nama = iNama;
-}
-
-Mahasiswa::Mahasiswa(int iNim, string iNama)
-    {
-        nim = iNim;
-        nama = iNama;
-    };
-void Mahasiswa::cetak(){
-    cout << "NIM = " << nim << endl;
-    cout << "Nama = " << nama << endl;
-    cout << endl;
-     cout << endl;
+        this->judul = judul;
+        return *this; // chain function
     }
+    string getJudul()
+    {
+        return this->judul;
+    }
+} bukunya;
 
 int main()
 {
-    Mahasiswa mhs1;
-    Mahasiswa mhs2(20);
-    Mahasiswa mhs3("Agus");
-    Mahasiswa mhs4(30,"Asep");
-
-    mhs1.cetak();
-    mhs2.cetak();
-    mhs3.cetak();
-    mhs4.cetak();
-
-    return 0;
+    // bukunya.setJudul("Matematika");
+    // cout << bukunya.getJudul();
+     cout << bukunya.setJudul("Matematika").getJudul(); // chain function calls
+     return 0;
 }
