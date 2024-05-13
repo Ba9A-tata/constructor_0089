@@ -8,5 +8,6 @@ private:
 
 public:
     int id;
+    string nama;
     
 }
