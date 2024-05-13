@@ -21,3 +21,34 @@ public:
     Mahasiswa(int iNim, string iNama);
     void cetak();
 };
+
+Mahasiswa::Mahasiswa(string iNama){
+    nama = iNama;
+}
+
+Mahasiswa::Mahasiswa(int iNim, string iNama)
+    {
+        nim = iNim;
+        nama = iNama;
+    };
+void Mahasiswa::cetak(){
+    cout << "NIM = " << nim << endl;
+    cout << "Nama = " << nama << endl;
+    cout << endl;
+     cout << endl;
+    }
+
+int main()
+{
+    Mahasiswa mhs1;
+    Mahasiswa mhs2(20);
+    Mahasiswa mhs3("Agus");
+    Mahasiswa mhs4(30,"Asep");
+
+    mhs1.cetak();
+    mhs2.cetak();
+    mhs3.cetak();
+    mhs4.cetak();
+
+    return 0;
+}

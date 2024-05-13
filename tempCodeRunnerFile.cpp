@@ -4,55 +4,52 @@ using namespace std;
 
 class Mahasiswa
 {
-private:
-    static int nim;
-
 public:
-    int id;
+    int nim;
     string nama;
 
-    void setID();
-    void printAll();
-
-    static void setNim(int pNim) { nim = pNim; }
-    static int getNim() { return nim; }
-
-    Mahasiswa(string pnama):nama(pnama)
+    Mahasiswa()
     {
-        setID();
-    }
+        nim = 0;
+        nama = "";
+    };
+    Mahasiswa(int iNim)
+    {
+        nim = iNim;
+    };
+    Mahasiswa(string);
+    Mahasiswa(int iNim, string iNama);
+    void cetak();
 };
 
-int Mahasiswa::nim = 100;
-
-void Mahasiswa::setID()
-{
-    id = ++nim;
+Mahasiswa::Mahasiswa(string iNama){
+    nama = iNama;
 }
 
-void Mahasiswa::printAll()
-{
-    cout << "ID  = " << id << endl;
+Mahasiswa::Mahasiswa(int iNim, string iNama)
+    {
+        nim = iNim;
+        nama = iNama;
+    };
+void Mahasiswa::cetak(){
+    cout << "NIM = " << nim << endl;
     cout << "Nama = " << nama << endl;
     cout << endl;
-}
+     cout << endl;
+    }
 
 int main()
 {
-    Mahasiswa mhs1("Sri Dari");
-    Mahasiswa mhs2("Budi Jatmiko");
+    Mahasiswa mhs1;
+    Mahasiswa mhs2(20);
+    Mahasiswa mhs3("Agus");
+    Mahasiswa mhs4(30,"Asep");
 
-    Mahasiswa::setNim(9); // mengakses nim melalui static member function "setNim"
-    Mahasiswa mhs3("Andi Janu");
-    Mahasiswa mhs4("Joko Wahono");
-
-    mhs1.printAll();
-    
-    mhs2.printAll();
-    mhs3.printAll();
-    mhs4.printAll();
-
-    cout << "akses dari luar object = " << Mahasiswa::getNim() << endl; // mengakses nim
+    mhs1.cetak();
+    mhs2.cetak();
+    mhs3.cetak();
+    mhs4.cetak();
 
     return 0;
+
 }
