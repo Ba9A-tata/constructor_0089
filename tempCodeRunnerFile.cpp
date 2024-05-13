@@ -51,5 +51,4 @@ int main()
     mhs4.cetak();
 
     return 0;
-
 }
